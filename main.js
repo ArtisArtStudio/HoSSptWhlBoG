@@ -58,11 +58,9 @@ function confetti_effect() {
     }
     
     document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
-    $('body').css({
-        'background-image: ' : color,
-       '-webkit-background-image': color3b, // For WebKit browsers
-        'background-image': color3, // Standard
-    });
+    $('body').css('background-image', color);
+    $('body').css('-webkit-background-image', color3b); // For WebKit browsers
+    $('body').css('-moz-background-image', color3a); // Standard
 
     $('#H3').hide();
     $('#H4').hide();
@@ -81,10 +79,10 @@ function confetti_effect() {
    var particleCount = 5 ;
    (function frame() {
    // launch a few confetti from the left edge
-   confetti({...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: [colortxt]}
+   confetti({...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: [colortxt1]}
    );
    // and launch a few from the right edge
-   confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: [colortxt]}
+   confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: [colortxt2]}
    );
 
    // keep going until we are out of time
